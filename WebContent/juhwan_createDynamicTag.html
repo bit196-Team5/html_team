@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="juhwan/css/style.css" />
+  <title>🐱‍🏍동적 생성🐱‍🏍</title>
+</head>
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+  }
+
+</style>
+
+<body>
+  <!-- navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="juhwan_index.html">
+        <img src="juhwan/images/html5_18891.ico" alt="" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="juhwan_index.html">홈</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="juhwan_toDoList.html">To Do List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="juhwan_kanvan.html">칸반보드</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="juhwan_createDynamicTag.html">동적태그생성</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="juhwan_api.html">다양한 api</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="juhwan_index2.html">개인 소개 페이지</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- main section-->
+  <div class="container">
+    <div class="row my-6">
+      <div class="col-3 bg-light">동적태그 생성</div>
+      <div class="col-9 bg-light">
+        <div id="htmlTest" style="border-width:1px; border-style:solid">
+
+          <br>
+          <input type="text" name="" id="" value="변경 전">
+          <br />
+          변경전 HTML
+          <br />
+        </div>
+        <div id="textTest" style="border-width:1px; border-style:solid;"></div>
+        <input type="button" value="html 태그 변경" id="htmlButton">
+        <input type="button" value="변경할 동적태그를 text로 출력" id="textButton">
+      </div>
+    </div>
+    <hr>
+    <div class="row my-6">
+      <div class="col-3 bg-light">동적테이블 생성</div>
+      <div class="col-9 bg-light">
+        <table style="border: 1px;" id="dynamicTable" border='1'>
+          <thead id="dynamicThead">
+            <tr>
+              <th>이름</th>
+              <th>직업</th>
+              <th>나이</th>
+            </tr>
+          </thead>
+          <tbody id="dynamicTbody">
+
+          </tbody>
+        </table>
+        <div>
+          <input type="text" placeholder="이름" id="inName">
+          <input type="text" placeholder="직업" id="inJob">
+          <input type="text" placeholder="나이" id="inAge">
+          <button onclick="tableCreate()"> 생성</button>
+          <button onclick="tableDelete()"> 삭제</button>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+  <!-- footer-->
+  <footer class="text-center">
+    <button onclick="topFunction()" id="topBtn" title="맨 위로">Top</button>
+    <p>&copy; 2021 오조라고, lnc. ·Privacy ·Terms</p>
+  </footer>
+
+  <!-- footer 종료-->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+</body>
+
+<script>
+  let topbutton = document.getElementById("topBtn");
+
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 50 ||
+      document.documentElement.scrollTop > 50
+    ) {
+      topbutton.style.display = "block";
+    } else {
+      topbutton.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  $(function () {
+    let tag = "<input type='checkbox'><br />변경후HTML";
+    //html함수 적용하여 htmltetst태그내의 html 변경
+    $("#htmlButton").click(function () {
+      $('#htmlTest').html(tag);
+    });
+    //text함수를 적용하여 html함수를 사용했던 같은 내용의 문자열을 표출
+    $('#textButton').click(function () {
+      $('#textTest').text(tag);
+    });
+  });
+
+  $('#btn1').click(function () {
+    var html = "<tr><td>방법1</td><td>방법1</td><td>방법1</td></tr>"
+    $('tbody').append(html);
+  });
+
+  $('#btn2').click(function () {
+    var $tr = $("<tr>", {});
+    var $td1 = $("<td>", { text: "방법2" });
+    var $td2 = $("<td>", { text: "방법2" });
+    var $td3 = $("<td>", { text: "방법2" });
+
+    $tr.append($td1);
+    $tr.append($td2);
+    $tr.append($td3);
+
+    $('tbody').append($tr);
+  });
+
+  function tableCreate() {
+    var tc = new Array();
+    var html = '';
+
+    var name = $("#inName").val();
+    var job = $("#inJob").val();
+    var age = $("#inAge").val();
+    var hobby = $("#inHobby").val();
+
+    html += '<tr>';
+    html += '<td>' + name + '</td>';
+    html += '<td>' + job + '</td>';
+    html += '<td>' + age + '</td>';
+    html += '</tr>';
+
+    $("#dynamicTable").append(html);
+
+    $("#inName").val('');
+    $("#inJob").val('');
+    $("#inAge").val('');
+  }
+  function tableDelete() {
+    $('#dynamicTable tbody tr:last').remove();
+  }
+</script>
+
+</html>

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="juhwan/css/style.css" />
+  <title>🐱‍🏍홈🐱‍🏍</title>
+</head>
+
+<body>
+  <!-- navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="juhwan_index.html">
+        <img src="juhwan/images/html5_18891.ico" alt="" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="juhwan_index.html">홈</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="juhwan_toDoList.html">To Do List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="juhwan_kanvan.html">칸반보드</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="juhwan_createDynamicTag.html">동적태그생성</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="juhwan_api.html">다양한 api</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="btn" onclick="document.getElementById('id01').style.display='block'"
+              style="width:auto;">회원가입</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="juhwan_index2.html">개인 소개 페이지</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- top container -->
+  <div class="container">
+
+
+
+    <div class="text-center my-5">
+      <p class="fs-1"><strong>어느 날, 우리는 5조에 배정되었다.</strong></p>
+    </div>
+    <!-- main image -->
+    <div class="container">
+      <img src="juhwan/images/first.PNG" class="img-fluid d-block w-100" alt="..." id="topImg"/>
+    </div>
+    <!-- top container 종료 -->
+
+    <div class="text-center my-5">
+      <p class="fs-1"><strong>함께 공부하고</strong></p>
+    </div>
+  </div>
+  <!-- main container -->
+  <!-- study section -->
+  <div class="container">
+    <!-- 플로팅 메뉴 -->
+    <div id="floatMenu">
+      <div id="d-day" class="text-center">수료일</div>
+    </div>
+
+    <div class="row my-5">
+      <div class="col-7">
+        <h3>자바(Java)</h3>
+        <ul>
+          자바(Java)는 1995년 미국의 '썬마이크로시스템즈'에서 개발한 객체지향
+          언어입니다.
+          <li class="my-1">
+            <p>
+              쉬운 난이도<br />자바는 기본적으로는 C와 C++의 문법을 차용한
+              언어입니다. 그러나 C와 C++에서 가장 이해하기 어려운 수준인
+              포인터, 다중 상속 등의 개념을 없애 문법적인 난이도를 매우
+              낮췄습니다. 따라서 C 혹은 C++을 사용해본 프로그래머라면 자바에
+              매우 쉽게 적응할 수 있을겁니다.
+            </p>
+          </li>
+          <li>
+            <p>
+              Garbage Collector<br />Garbage Collector는 프로그램이 실행 중에
+              사용하지 않는 메모리를 자동 해제합니다. 이 기능 덕분에 자바
+              개발자는 메모리 관리를 염두에 두지 않고 프로그램을 개발할 수
+              있습니다.
+            </p>
+          </li>
+          <li>
+            <p>
+              JVM(Java Virtual Machine)<br />소스코드에서 프로그램으로
+              만들어지는 과정 중 컴파일링(Compiling)이라는 과정을 거치게
+              되는데, 이는 사람에 친화적인 컴퓨터 언어를 운영체제(Linux,
+              Windows 등)가 이해할 수 있는 기계어로 번역되는 과정을
+              지칭합니다. 즉, 컴파일링을 거쳤을 때 Linux용 C 프로그램
+              소스코드는 Linux 기계어로, Windows용 C 프로그램 소스코드는
+              Windows 기계어로 번역되기 때문에 서로 다른 운영체제에서는 사용할
+              수 없습니다.하지만 자바는 JVM이 중간 다리 역할을 합니다.
+              운영체제와 프로그램 사이에서 프로그램이 동작하고 있는 운영체제가
+              무엇인지 판단한 뒤 해당 운영체제의 기계어로 다시 번역해주기
+              때문에 운영체제와 상관없이 프로그램을 실행할 수 있습니다.
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div class="col-5">
+        <img src="juhwan/images/JavaLogo.png" alt="..." class="w-100" />
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="row my-5">
+      <div class="col-7">
+        <img src="juhwan/images/oracleLogo.png" alt="..." class="w-100" />
+      </div>
+      <div class="col-5">
+        <h3>Oracle SQL</h3>
+        <ul>
+          SQL은 관계형 데이터 베이스에서 데이터를 관리하기 위한 목적으로
+          만들어졌습니다.<br />
+          데이터베이스에서 데이터를 조회, 입력, 수정, 삭제, 저장하는데
+          사용되는 질의 언어로써 절차적 언어의 특징을 가지고 있습니다.
+          <li class="my-1">
+            <p>패턴이 정해져 있어 배우기 쉽습니다.</p>
+          </li>
+          <li>
+            <p>개별 단위로 처리되지 않고 데이터 집합 단위로 처리합니다.</p>
+          </li>
+          <li>
+            <p>
+              표준 SQL 문법이 존재하여 어떤 DBMS라도 공통으로 SQL 문장을
+              작성할 수 있습니다.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="row my-5">
+      <div class="col-7">
+        <h3>HTML</h3>
+        <p>
+          웹 브라우저에서 문서 및 웹 페이지가 표시되는 방법을 규정하는
+          언어이며, 어떠한 웹사이트에서든 블록(block)을 구성하는 데 사용되는
+          언어이기도 합니다. HTML을 이용하면, 웹사이트의 구조를 만들 수
+          있습니다.
+        </p>
+        <br />
+
+        <h3>CSS(Cascading Style Sheets)</h3>
+        <p>
+          HTML로 만들어진 문서의 (컬러, 폰트 스타일, 레이아웃, 반응형 특징
+          등의) 스타일을 지정하는 방식을 규정하는 유명한 스타일 시트
+          언어입니다. CSS는 웹사이트를 시각적으로 보다 매력적으로 만드는
+          기능을 제공합니다.
+        </p>
+        <br />
+
+        <h3>자바스크립트(JavaScript)</h3>
+        <p>
+          웹사이트가 로딩된 이후에 CSS와 HTML 구성요소들을 변경할 수 있게
+          해주며, 이를 통해서 웹사이트를 보다 인터랙티브(interactive)하게
+          만들고 사용자의 참여율도 높일 수 있습니다.
+        </p>
+        <br />
+      </div>
+      <div class="col-5">
+        <img src="juhwan/images/htmlCssJs.png" alt="..." class="w-100" />
+      </div>
+    </div>
+    <hr />
+    <div class="row my-5">
+      <div class="col-7">
+        <img src="juhwan/images/Jquery.png" alt="..." class="w-100" />
+      </div>
+      <div class="col-5">
+        <h3>Jquery</h3>
+        <ul>
+          제이쿼리는 웹사이트에 자바스크립트를 쉽게 활용할 수 있도록 도와주는
+          오픈소스 기반의 자바스크립트 라이브러리입니다.<br />
+          <li class="my-1">
+            <p>
+              웹페이지 상에서 엘리먼트(Element)를 쉽게 찾고 조작할 수
+              있습니다.
+            </p>
+          </li>
+          <li>
+            <p>
+              거의 모든 웹브라우저에 대응할 정도로 호환성이 매우 뛰어납니다.
+            </p>
+          </li>
+          <li>
+            <p>네트워크, 애니메이션 등 다양한 기능을 제공합니다.</p>
+          </li>
+          <li>
+            <p>
+              메소드 체이닝(Method chaining) 등 짧고 유지관리가 용이한 코드
+              작성을 지원합니다.
+            </p>
+          </li>
+          <li>
+            <p>
+              관련 플러그인들이 웹상에 공개되어 있으며 플러그인을 직접
+              구현하거나 확장할 수 있습니다.
+            </p>
+          </li>
+          <li>
+            <p>
+              공식 웹사이트(www.jquery.com)와 수많은 레퍼런스를 통해 쉽게 접근
+              가능합니다.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="row my-5">
+      <div class="col-7">
+        <h3>Bootstrap</h3>
+        <ul>
+          부트스트랩은 반응형이며 모바일 우선인 웹프로젝트 개발을 위한 가장
+          인기있는 HTML, CSS, JS 프레임워크입니다. 한마디로 웹사이트 개발시의
+          프레임워크입니다. 영어로는 FrameWork, 한글로는 쉽게 도우미라고
+          생각을 하시면 좋을 것이라 생각됩니다. 즉, 부트스트랩은 HTML, CSS, JS
+          도우미입니다.
+          <li class="my-1">
+            <p>
+              미리 정의된 클래스 선택자를 html 코드에 삽입 하는 곳 만으로
+              레이아웃과 각종 요소가 만들어집니다.
+            </p>
+          </li>
+          <li>
+            <p>반응형 웹을 최소한의 코드로 구현할 수 있습니다.</p>
+          </li>
+          <li>
+            <p>
+              트위터에서 미리 만든 UI를 사용하므로 전문 디자이너가 아니더라도
+              퀄리티 높은 웹을 구현할 수 있습니다.
+            </p>
+          </li>
+          <li>
+            <p>
+              웹페이지를 만들기 위한 거의 모든 요소에 대해 미리 정의를
+              해놓았기 때문에 손쉽게 웹사이트를 만들 수 있게 해주는
+              플랫폼입니다.
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div class="col-5">
+        <img src="juhwan/images/bootstrap.png" alt="..." class="w-100" />
+      </div>
+      <hr />
+      <div class="row my-5">
+        <div class="col-7">
+          <img src="juhwan/images/jsp.png" alt="..." class="w-100" />
+        </div>
+        <div class="col-5">
+          <h3>JSP</h3>
+          <ul>
+            JavaServer Pages 의 약자로 ,HTML 코드에 JAVA 코드를 넣어
+            동적웹페이지를 생성하는 웹어플리케이션 도구입니다. JSP가 실행되면
+            자바 서블릿(Servlet) 으로 변환되며 웹 어플리케이션 서버에서
+            동작되면서 필요한 기능을 수행하고 생성된 데이터를 웹페이지와 함께
+            클라이언트로 응답합니다.
+            <br />
+            <li class="my-1">
+              <p>객체 지향적</p>
+            </li>
+            <li>
+              <p>플랫폼에 독립적</p>
+            </li>
+            <li>
+              <p>네트워크 지향적.</p>
+            </li>
+            <li>
+              <p>뛰어난 보안성</p>
+            </li>
+            <li>
+              <p>멀티스레드 기능</p>
+            </li>
+            <li>
+              <p>친근한 코드</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- study section 종료-->
+    <hr />
+    <!-- portfolio section -->
+    <div class="text-center my-5">
+      <p class="fs-1"><strong>함께 과제하며</strong></p>
+    </div>
+    <div class="container my-5">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2700">
+        <!-- Indicators -->
+        <!--
+                <ul class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                    <li data-target="#myCarousel" data-slide-to="4"></li>
+                    <li data-target="#myCarousel" data-slide-to="5"></li>
+                    <li data-target="#myCarousel" data-slide-to="6"></li>
+                </ul>
+                -->
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="juhwan/images/01-full.jpg" alt="Los Angeles" width="1100" height="500" />
+          </div>
+          <div class="carousel-item">
+            <img src="juhwan/images/02-full.jpg" alt="Chicago" width="1100" height="500" />
+          </div>
+          <div class="carousel-item">
+            <img src="juhwan/images/03-full.jpg" alt="New York" width="1100" height="500" />
+          </div>
+          <div class="carousel-item">
+            <img src="juhwan/images/04-full.png" alt="New York" width="1100" height="500" />
+          </div>
+          <div class="carousel-item">
+            <img src="juhwan/images/05-full.png" alt="New York" width="1100" height="500" />
+          </div>
+          <div class="carousel-item">
+            <img src="juhwan/images/06-full.png" alt="New York" width="1100" height="500" />
+          </div>
+        </div>
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+      <!--carousel slide 종료-->
+    </div>
+    <!-- carousel container 종료-->
+
+    <br />
+    <div class="text-center my-5">
+      <p class="fs-1"><strong>노력한 결과</strong></p>
+    </div>
+    <br />
+    <div class="container">
+      <img src="juhwan/images/cheerUp.PNG" class="img-fluid d-block w-100" alt="..." />
+    </div>
+
+    <div class="text-center my-5">
+      <p class="fs-1">
+        <strong>각자 원하는 기업에서 일할 수 있었다.</strong>
+      </p>
+    </div>
+    <div class="container">
+      <img src="juhwan/images/it.png" class="img-fluid d-block w-100" alt="..." />
+      <img src="juhwan/images/it3.png" class="img-fluid d-block w-100" alt="..." />
+    </div>
+    <hr />
+  </div>
+
+
+
+  <div id="id01" class="modal">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close"
+      title="Close Modal">&times;</span>
+    <form class="modal-content" action="#">
+      <div class="container">
+        <h1>회원 가입</h1>
+
+        <hr>
+        <label for="email"><b>이메일</b></label>
+        <input type="text" placeholder="이메일" name="email" required>
+
+        <label for="psw"><b>비밀번호</b></label>
+        <input type="password" placeholder="비밀번호" name="psw" required>
+
+        <label for="psw-repeat"><b>비밀번호 확인</b></label>
+        <input type="password" placeholder="비밀번호 확인" name="psw-repeat" required>
+
+        <label>
+          <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+        </label>
+
+        <p>회원가입시 오조라고 <a href="#" style="color:dodgerblue">약관 & 개인정보처리</a>에 동의하게됩니다.</p>
+
+        <div class="clearfix">
+          <button type="submit" class="signupbtn">Sign Up</button>
+          <button type="button" onclick="document.getElementById('id01').style.display='none'"
+            class="cancelbtn">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+
+
+
+
+  <!-- footer-->
+  <footer class="text-center">
+    <button onclick="topFunction()" id="topBtn" title="맨 위로">Top</button>
+    <p>&copy; 2021 오조라고, lnc. ·Privacy ·Terms</p>
+  </footer>
+
+  <!-- footer 종료-->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+</body>
+
+<script>
+  let topbutton = document.getElementById("topBtn");
+
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 50 ||
+      document.documentElement.scrollTop > 50
+    ) {
+      topbutton.style.display = "block";
+    } else {
+      topbutton.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  // 기존 css에서 플로팅 배너 위치(top)값을 가져와 저장한다.
+  let floatPosition = parseInt($("#floatMenu").css("top"));
+  // 250px 이런식으로 가져오므로 여기서 숫자만 가져온다. parseInt( 값 );
+
+  $(window)
+    .scroll(function () {
+      // 현재 스크롤 위치를 가져온다.
+      var scrollTop = $(window).scrollTop();
+      var newPosition = scrollTop + floatPosition + "px";
+
+      /* 애니메이션 없이 바로 따라감
+    $("#floatMenu").css('top', newPosition);
+    */
+
+      $("#floatMenu").stop().animate(
+        {
+          top: newPosition,
+        },
+        500
+      );
+    })
+    .scroll();
+
+  //디데이 종료 일자 설정
+  let countDownDate = new Date("June 31, 2021 15:00:00").getTime();
+  //1초마다 갱신되도록 함수 생성,실행
+  let x = setInterval(function () {
+    // 오늘 날짜 등록
+    let now = new Date().getTime();
+    // 종료일자에서 현재일자를 뺀 시간
+    let distance = countDownDate - now;
+    // 각 변수에 일, 시, 분, 초를 등록
+    let d = Math.floor(distance / (1000 * 60 * 60 * 24));
+    //let h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    //let m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    //let s = Math.floor((distance % (1000 * 60)) / 1000);
+    //id가 d-day인 HTML코드에 내용 삽입
+    document.getElementById("d-day").innerHTML =
+      "수료일까지 " + "<br>" + d + "일 남았습니다.";
+  });
+
+
+  var modal = document.getElementById('id01');
+
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+
+
+
+</script>
+
+</html>

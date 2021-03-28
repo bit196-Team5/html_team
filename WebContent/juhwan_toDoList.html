@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="juhwan/css/style.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+  <title>🐱‍🏍toDoList🐱‍🏍</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+
+    #tdUL {
+      margin: 0;
+      padding: 0;
+      list-style: inside;
+    }
+
+
+    ul .tdList {
+      cursor: pointer;
+      position: relative;
+      padding: 12px 8px 12px 40px;
+      background: #eee;
+      font-size: 18px;
+      transition: 0.2s;
+
+
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+
+    ul .tdList:nth-child(odd) {
+      background-color: #f9f9f9;
+    }
+
+
+    ul .tdList:hover {
+      background: #ff8a8a;
+    }
+
+
+    .checked {
+      background: #ff9292;
+      color: #fff;
+      text-decoration: line-through;
+      padding: 12px 8px 12px 40px;
+      font-size: 18px;
+    }
+
+
+
+    span.close {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      right: 0%;
+      transform: translate(0%, -50%);
+      list-style-type: none;
+      padding: 12.5px;
+      margin: 0;
+    }
+
+    .close:hover {
+      background-color: #f44336;
+    }
+
+
+    .tdHeader {
+      background-color: #f44336;
+      padding: 12px 8px 12px 40px;
+      color: #ffffff;
+      text-align: center;
+      ;
+    }
+
+
+    .tdHeader:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+
+    #tdInput {
+      margin: 0;
+      border: none;
+      border-radius: 50px;
+      text-align: center;
+      width: 75%;
+      float: left;
+      font-size: 16px;
+      padding: 10px;
+
+      position: relative;
+      bottom: 8px;
+    }
+
+
+    .tdAddBtn {
+      padding: 10px;
+      width: 25%;
+      background: #ffffff;
+      color: black;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .tdAddBtn:hover {
+      background-color: #343a40;
+      color: whitesmoke;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="juhwan_index.html">
+        <img src="juhwan/images/html5_18891.ico" alt="" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="juhwan_index.html">홈</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="juhwan_toDoList.html">To Do List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="juhwan_kanvan.html">칸반보드</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="juhwan_createDynamicTag.html">동적태그생성</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="juhwan_api.html">다양한 api</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="juhwan_index2.html">개인 소개 페이지</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- main container -->
+  <div class="container">
+
+    <div id="myDIV" class="tdHeader">
+      <h2></h2>
+      <input type="text" name="" id="tdInput" placeholder="여기에 입력하세요...">
+      <span onclick="newElement()" class="tdAddBtn">추가</span>
+
+    </div>
+    <ul id="tdUL">
+      <li class="tdList">족발</li>
+      <li class="tdList">햄벅</li>
+      <li class="tdList">김밥</li>
+      <li class="tdList">라면</li>
+      <li class="tdList">치킨</li>
+      <li class="tdList">피자</li>
+    </ul>
+  </div>
+  <!-- main container 종료-->
+
+  <!-- footer-->
+  <footer class="text-center">
+    <button onclick="topFunction()" id="topBtn" title="맨 위로">Top</button>
+    <p>&copy; 2021 오조라고, lnc. ·Privacy ·Terms</p>
+  </footer>
+  <!-- footer 종료-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+</body>
+<script>
+  let topbutton = document.getElementById("topBtn");
+
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 50 ||
+      document.documentElement.scrollTop > 50
+    ) {
+      topbutton.style.display = "block";
+    } else {
+      topbutton.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+
+  let myTdList = document.getElementsByClassName('tdList');
+  for (let i = 0; i < myTdList.length; i++) {
+    let span = document.createElement('span');
+    let txt = document.createTextNode('\u00D7'); //x 표 유니코드
+    span.className = 'close';
+    span.appendChild(txt);
+    myTdList[i].appendChild(span);
+  }
+
+  let close = document.getElementsByClassName('close');
+  let i;
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function () {
+      let div = this.parentElement;
+      div.style.display = 'none';
+    }
+  }
+
+  function newElement() {
+    let li = document.createElement('li');
+    li.className = 'tdList';
+    let inputValue = document.getElementById('tdInput').value;
+    let t = document.createTextNode(inputValue);
+    li.appendChild(t);
+    if (inputValue === '') {
+      alert('You must write something!');
+    } else {
+      document.getElementById('tdUL').appendChild(li);
+    }
+    document.getElementById('tdUL').value = '';
+
+
+    let span = document.createElement('SPAN');
+    let txt = document.createTextNode('\u00D7');
+    span.className = 'close';
+    span.appendChild(txt);
+    li.appendChild(span);
+
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function () {
+        let div = this.parentElement;
+        div.style.display = 'none';
+      }
+    }
+  }
+
+
+  $(document).on("click", ".tdList", function (event) {
+    $(this).toggleClass('checked');
+  });
+
+
+
+</script>
+
+</html>

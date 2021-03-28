@@ -1,0 +1,674 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<title>JOHASUN : 5조</title>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="hasun/assets/css/main.css" />
+<!-- 필수 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--  Jquery  UI (js 파일(함수) , css 파일)  -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<noscript>
+	<link rel="stylesheet" href="hasun/assets/css/noscript.css" />
+</noscript>
+
+<style type="text/css">
+
+	.row > .column {
+  	padding: 0 8px;
+	}
+	
+	.row:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+	
+	.column {
+	  float: left;
+	  width: 25%;
+	}
+	
+	/* The Modal (background) */
+	.modal {
+	  display: none;
+	  position: fixed;
+	  z-index: 1;
+	  padding-top: 100px;
+	  left: 0;
+	  top: 0;
+	  width: 100%;
+	  height: 100%;
+	  overflow: auto;
+	  background-color: black;
+	}
+	
+	/* Modal Content */
+	.modal-content {
+	  position: relative;
+	  background-color: #fefefe;
+	  margin: auto;
+	  padding: 0;
+	  width: 90%;
+	  max-width: 1200px;
+	}
+
+	.mySlides {
+	  display: none;
+	}
+	
+	.cursor {
+	  cursor: pointer;
+	}
+	
+	/* Next & previous buttons */
+	.prev,
+	.next {
+	  cursor: pointer;
+	  position: absolute;
+	  top: 50%;
+	  width: auto;
+	  padding: 16px;
+	  margin-top: -50px;
+	  color: white;
+	  font-weight: bold;
+	  font-size: 20px;
+	  transition: 0.6s ease;
+	  border-radius: 0 3px 3px 0;
+	  user-select: none;
+	  -webkit-user-select: none;
+	}
+	
+	/* Position the "next button" to the right */
+	.next {
+	  right: 0;
+	  border-radius: 3px 0 0 3px;
+	}
+	
+	/* On hover, add a black background color with a little bit see-through */
+	.prev:hover,
+	.next:hover {
+	  background-color: rgba(0, 0, 0, 0.8);
+	}
+	
+	/* Number text (1/3 etc) */
+	.numbertext {
+	  color: #f2f2f2;
+	  font-size: 12px;
+	  padding: 8px 12px;
+	  position: absolute;
+	  top: 0;
+	}
+	
+	img {
+	  margin-bottom: -4px;
+	}
+	
+	.caption-container {
+	  text-align: center;
+	  background-color: black;
+	  padding: 2px 16px;
+	  color: white;
+	}
+	
+	.demo {
+	  opacity: 0.6;
+	}
+	
+	.active,
+	.demo:hover {
+	  opacity: 1;
+	}
+	
+	img.hover-shadow {
+	  transition: 0.3s;
+	}
+	
+	.hover-shadow:hover {
+	  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+	#myBtn {
+	  display: none;
+	  position: fixed;
+	  bottom: 20px;
+	  right: 30px;
+	  z-index: 99;
+	  font-size: 18px;
+	  border: none;
+	  outline: none;
+	  color: white;
+	  cursor: pointer;
+	  border-radius: 4px;
+	}
+	
+	#myBtn:hover {
+	  background-color: #555;
+	}
+	#myUL {
+	  margin: 0;
+	  padding: 0;
+	}
+
+	/* Style the list items */
+	.myUL_li {
+	  color: white;
+	  cursor: pointer;
+	  position: relative;
+	  padding: 12px 8px 12px 40px;
+	  list-style-type: none;
+	  background: #C76B78;
+	  font-size: 18px;
+	  transition: 0.2s;
+	  
+	  /* make the list items unselectable */
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  -ms-user-select: none;
+	  user-select: none;
+	}
+	
+	/* Set all odd list items to a different color (zebra-stripes) */
+	.myUL_li:nth-child(odd) {
+	  background: #ED808F;
+	}
+	
+	/* Darker background-color on hover */
+	.myUL_li:hover {
+	  background: white;
+	  color: #E07885;
+	}
+	
+	/* When clicked on, add a background color and strike out text */
+	ul li.checked {
+	  background: #A15761;
+	  color: #fff;
+	  text-decoration: line-through;
+	}
+	
+	/* Add a "checked" mark when clicked on */
+	ul li.checked::before {
+	  content: '';
+	  position: absolute;
+	  border-color: #fff;
+	  border-style: solid;
+	  border-width: 0 2px 2px 0;
+	  top: 10px;
+	  left: 16px;
+	  transform: rotate(45deg);
+	  height: 15px;
+	  width: 7px;
+	}
+	
+	/* Style the close button */
+	.close {
+	  position: absolute;
+	  right: 0;
+	  top: 0;
+	  padding: 12px 16px 12px 16px;
+	}
+	
+	.close:hover {
+	  background-color: #ED808F;
+	  color: white;
+	}
+	
+	/* Style the header */
+	.header {
+	  background-color: #e07885;
+	  padding: 30px 40px;
+	  color: white;
+	  text-align: center;
+	}
+	
+	/* Clear floats after the header */
+	.header:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+	
+	/* Style the input */
+	#myInput {
+	  margin: 0;
+	  border: none;
+	  border-radius: 0;
+	  width: 75%;
+	  padding: 10px;
+	  float: left;
+	  font-size: 16px;
+	}
+	
+	/* Style the "Add" button */
+	.addBtn {
+	  padding: 8.7px;
+	  width: 25%;
+	  background: #ED808F;
+	  color: white;
+	  float: left;
+	  text-align: center;
+	  font-size: 16px;
+	  cursor: pointer;
+	  transition: 0.3s;
+	  border-radius: 0;
+	}
+	
+	.addBtn:hover {
+	  background-color: #ED808F;
+	  color: white;
+	}
+	
+	a#MOVE_TOP_BTN	{
+		position: fixed;
+	    right: 2%;
+	    bottom: 50px;
+	    z-index: 999;
+	}
+</style>
+<script type="text/javascript">
+	let song = {
+			"SONGLIST" : [
+				{
+                    "snum": "1",
+                    "vocal": "백예린",
+                    "song": "야간비행",
+                    "image":'http://asq.kr/IeDhG4XdExH',
+                    "file": "hasun/audio/백예린 - 야간비행.mp3"
+                },
+                {
+                    "snum": "2",
+                    "vocal": "샤이니",
+                    "song": "투명우산",
+                    "image":'http://asq.kr/pNdMo5ZKe3fVTx',
+                    "file":"hasun/audio/샤이니 - 투명우산.mp3"
+                },
+                {
+                    "snum": "3",
+                    "vocal": "이달의 소녀",
+                    "song": "Heart Attack(츄)",
+                    "image":'http://asq.kr/hZSStCa4GX9l7n',
+                    "file":"hasun/audio/이달의 소녀 - Heart Attack(츄).mp3"
+                },
+                {
+                	"snum": "4",
+                    "vocal": "레드벨벳",
+                    "song": "Oh Boy",
+                    "image":'http://asq.kr/VaLvgksgt4HqSh',
+                    "file":"hasun/audio/레드벨벳 - Oh Boy.mp3"
+                }
+			]
+	}
+	window.onload = function(){
+		
+		let songList = song.SONGLIST;
+		let myaudio = document.getElementById("realAudio");
+		
+		//노래넣기
+		$("#realAudio").attr("src", songList[0].file);
+		//이름넣기
+		$("#musicName").html("<br><h2>"+ songList[0].song+"-"+songList[0].vocal+"");
+		//커버이미지 넣기
+		$("#coverImageSrc").attr("src", songList[0].image);
+		
+		//제목설정
+		function musicName(index) {
+			$("#musicName").html("<br><h2>"+songList[index].song+"-"+songList[index].vocal+"</h2>");
+		}
+		
+		//커버이미지
+		function coverImage(index){
+			$("#coverImageSrc").attr("src", songList[index].image);
+		}
+		
+		//노래설정
+		function audio(index){
+			$("#realAudio").attr("src", songList[index].file)
+		}
+		
+		//이전곡 재생
+		function backward(){
+			$.each(songList, function(index, list){
+				if(list.image == $("#coverImageSrc").attr("src")){
+					if(list.snum == "1"){
+						audio(songList.length-1);
+						coverImage(songList.length-1);
+						musicName(songList.length-1);
+						playPause();
+						return false; //$ -> 중단 return "false" 필수
+					}
+					audio(index-1);
+					coverImage(index-1);
+					musicName(index-1);
+					playPause();
+					return false;
+				}
+			})
+		}
+		
+		//다음곡 재생
+		function forward(){
+			$.each(songList, function(index, list){
+				if(list.image == $("#coverImageSrc").attr("src")){
+					if(list.snum == songList.length){
+						audio(0);
+						coverImage(0);
+						musicName(0);
+						playPause();
+						return false;
+					}
+					audio(index+1);
+					coverImage(index+1);
+					musicName(index+1);
+					playPause();
+					return false;
+				}
+			})
+		}
+		
+		//노래재생 & 멈춤
+		function playPause(){
+			if (myaudio.paused){
+				myaudio.play();
+				$("#playButton").attr("src", "hasun/img/pause.png");
+			} else {
+				myaudio.pause();
+				$("#playButton").attr("src", "hasun/img/play-button.png");
+			}
+		}
+		
+		//음소거
+		function mute(){
+			if(myaudio.muted){
+				myaudio.muted = false;
+				$("#volumeMute").attr("src", "hasun/img/speaker.png");
+			} else {
+				myaudio.muted = true;
+				$("#volumeMute").attr("src", "hasun/img/mute.png");
+			}
+		}
+		
+		$('#backwardButton').on('click', backward);
+		$('#forwardButton').on('click', forward);
+		$('#playButton').on('click', playPause);
+		$('#volumeMute').on('click', mute);
+		$('#realAudio').on('ended', forward);
+		
+	}
+</script>
+</head>
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt">
+			<span class="logo"><img src="hasun/images/image.png" alt="" /></span>
+			<h1>HASUN</h1>
+			<p>
+				Welcome!<br /> My dream is a developer!<br> 열정 열정 열정!
+			</p>
+		</header>
+		<!-- Nav -->
+		<nav id="nav">
+			<ul>
+				<li><a href="#intro" class="active">Introduction</a></li>
+				<li><a href="#first">PLAY MUSIC!</a></li>
+				<li><a href="#second">todo List</a></li>
+				<li><a href="#cta">Portfolio</a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Introduction -->
+			<section id="intro" class="main">
+				<div class="spotlight">
+					<div class="content">
+						<header class="major">
+							<h2>조하선 자기소개</h2>
+						</header>
+						<p>안녕하세요. 저는 조하선입니다.<br> 
+						만반잘부^^ (만나서 반가워 잘 부탁한다는 뜻)</p>
+					</div>
+					<span class="image"><img src="hasun/images/image.png" alt="" /></span>
+				</div>
+			</section>
+
+			<!-- First Section -->
+			<section id="first" class="main special">
+				<header class="major">
+					<h2>PLAY MUSIC!</h2>
+				</header>
+					<!-- 커버이미지 -->
+					<div id="coverImage">
+						<img id="coverImageSrc" src="">
+					</div>
+					
+					<!-- 노래제목 -->
+					<div id="musicName">
+					<br>
+					</div>
+					
+					<!-- 음악컨트롤러 -->
+					<div id="control">
+					<audio id="realAudio" src=""></audio>
+					</div>
+					<div id="myControl">
+						<div id="myControl_play">
+						<!-- 재생바 -->
+							<div id=playWrap>
+								<!-- 이전곡재생 -->
+								<input id="backwardButton" type="image" src="hasun/img/backward.png" width="50" height="50">
+								<!-- 재생&중단 -->
+								<input id="playButton" type="image" src="hasun/img/play-button.png" width="50" height="50">
+								<!-- 다음곡재생 -->
+								<input id="forwardButton" type="image" src="hasun/img/forward.png" width="50" height="50">
+								<!-- 음소거 -->
+								<input id="volumeMute" type="image" src="hasun/img/speaker.png" width="50" height="50">
+							</div>
+				<footer class="major"> </footer>
+			</section>
+
+			<!-- Second Section -->
+			<section id="second" class="main special">
+				<header class="major">
+					<h2>todo List</h2>
+					<!-- todoList -->
+					<div id="myDIV" class="header">
+						<input type="text" id="myInput" placeholder="내용을 입력해주세요">
+						<span onclick="newElement()" class="addBtn">Add</span>
+					</div>
+					<ul id="myUL" class="myUL">
+						<li name="myUL_li" class="myUL_li" >할일1</li>
+						<li name="myUL_li" class="myUL_li" class="checked">할일2</li>
+						<li name="myUL_li" class="myUL_li">할일3</li>
+						<li name="myUL_li" class="myUL_li">할일4</li>
+					</ul>
+				</header>
+
+				<footer class="major"> </footer>
+			</section>
+
+			<!-- Get Started -->
+			<section id="cta" class="main special">
+				<header class="major">
+					<h2>Portfolio </h2>
+					<!-- The four columns -->
+					<div class="row">
+					  <div class="column">
+					    <img src="hasun/assets/css/images/회원가입.jpg" alt="회원가입" style="width:100%" onclick="myFunction(this);">
+					  </div>
+					  <div class="column">
+					    <img src="hasun/assets/css/images/JSON.png" alt="JSON_노래방검색" style="width:100%" onclick="myFunction(this);">
+					  </div>
+					  <div class="column">
+					    <img src="hasun/assets/css/images/AUDIO.png" alt="AUDIO" style="width:100%" onclick="myFunction(this);">
+					  </div>
+					  <div class="column">
+					    <img src="hasun/assets/css/images/VIDEO.png" alt="VIDEO" style="width:100%" onclick="myFunction(this);">
+					  </div>
+					</div>
+					
+					<div class="container">
+					  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+					  <div id="imgtext"></div>
+					  <img id="expandedImg" style="width:100%">
+					</div>
+					
+					<script>
+					function myFunction(imgs) {
+					  var expandImg = document.getElementById("expandedImg");
+					  var imgText = document.getElementById("imgtext");
+					  expandImg.src = imgs.src;
+					  imgText.innerHTML = imgs.alt;
+					  expandImg.parentElement.style.display = "block";
+					}
+					</script>
+				</header>
+				<footer class="major"> </footer>
+			</section>
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<section>
+				<h2>Aliquam sed mauris</h2>
+				<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat
+					consequat magna adipiscing tempus etiam dolore veroeros. eget
+					dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula
+					erat egestas velit, vitae tincidunt odio.</p>
+				<ul class="actions">
+					<li><a href="generic.html" class="button">Learn More</a></li>
+				</ul>
+			</section>
+			<section>
+				<h2>Etiam feugiat</h2>
+				<dl class="alt">
+					<dt>Address</dt>
+					<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
+					<dt>Phone</dt>
+					<dd>(000) 000-0000 x 0000</dd>
+					<dt>Email</dt>
+					<dd>
+						<a href="#">information@untitled.tld</a>
+					</dd>
+				</dl>
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-twitter alt"><span
+							class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-facebook-f alt"><span
+							class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon brands fa-instagram alt"><span
+							class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon brands fa-github alt"><span
+							class="label">GitHub</span></a></li>
+					<li><a href="#" class="icon brands fa-dribbble alt"><span
+							class="label">Dribbble</span></a></li>
+				</ul>
+			</section>
+			<p class="copyright">
+				&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.
+			</p>
+		</footer>
+		
+		<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+		
+		<script>
+		//Get the button
+		var mybutton = document.getElementById("myBtn");
+		
+		// When the user scrolls down 20px from the top of the document, show the button
+		window.onscroll = function() {scrollFunction()};
+		
+		function scrollFunction() {
+		  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+		    mybutton.style.display = "block";
+		  } else {
+		    mybutton.style.display = "none";
+		  }
+		}
+		
+		function topFunction() {
+		  $("html, body").animate({
+			  scrollTop: 0
+		  },600)
+		}
+		</script>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="hasun/assets/js/jquery.min.js"></script>
+	<script src="hasun/assets/js/jquery.scrollex.min.js"></script>
+	<script src="hasun/assets/js/jquery.scrolly.min.js"></script>
+	<script src="hasun/assets/js/browser.min.js"></script>
+	<script src="hasun/assets/js/breakpoints.min.js"></script>
+	<script src="hasun/assets/js/util.js"></script>
+	<script src="hasun/assets/js/main.js"></script>
+	<script>
+	// x 버튼
+	let myNodeList = document.getElementsByName("myUL_li");
+	for(let i=0; i<myNodeList.length; i++){
+		let span = document.createElement("SPAN");
+		let txt = document.createTextNode("\u00D7");
+		span.className="close";
+		span.appendChild(txt);
+		myNodeList[i].appendChild(span);
+	}
+	
+	// x 버튼 눌렀을때 리스트 삭제
+	let close = document.getElementsByClassName("close");
+	for(let i=0; i<close.length; i++){
+		close[i].onclick = function(){
+			let div = this.parentElement;
+			div.style.display = "none";
+		}
+	}
+	
+	// 리스트 선택시 체크되기
+	$(document).on('click','.myUL_li', function(){
+	//$('.myUL_li').click(function(){
+		$(this).toggleClass('checked');
+	});
+	
+	// 리스트 추가하기
+	function newElement(){
+		let li = document.createElement("li");
+		let inputValue = document.getElementById("myInput").value;
+		let t = document.createTextNode(inputValue);
+		li.appendChild(t);
+		if (inputValue === '') {
+		    alert("내용을 입력해주세요!");
+		  } else {
+		    document.getElementById("myUL").appendChild(li);
+		  }
+		 document.getElementById("myInput").value = "";
+		 
+	 	let span = document.createElement("SPAN");
+		let txt = document.createTextNode("\u00D7");
+		span.className="close";
+		span.appendChild(txt);
+		li.setAttribute('name', "myUL_li");
+		li.className='myUL_li';
+		li.appendChild(span);
+		
+		for(let i = 0; i<close.length; i++){
+			close[i].onclick = function(){
+				let div = this.parentElement;
+				div.style.display = "none";
+			}
+		}
+	}
+	</script>
+
+</body>
+
+</html>

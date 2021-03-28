@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="juhwan/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <title>🐱‍🏍api🐱‍🏍</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+    .column {
+      float: left;
+      width: 25%;
+      padding: 0 5px;
+    }
+
+    .row {
+      margin: 0 -5px;
+    }
+
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      padding: 16px;
+      text-align: center;
+      background-color: #444;
+      color: white;
+    }
+
+    .fa {
+      font-size: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="juhwan_index.html">
+        <img src="juhwan/images/html5_18891.ico" alt="" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="juhwan_index.html">홈</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="juhwan_toDoList.html">To Do List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="juhwan_kanvan.html">칸반보드</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="juhwan_createDynamicTag.html">동적태그생성</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="juhwan_api.html">다양한 api</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="juhwan_index2.html">개인 소개 페이지</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <h3>반응형 섹션</h3>
+
+
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <p><i class="fa fa-user"></i></p>
+        <h3>28</h3>
+        <p>자바 196기</p>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <p><i class="fa fa-check"></i></p>
+        <h3>1/3</h3>
+        <p>프로젝트 진행</p>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <p><i class="fa fa-smile"></i></p>
+        <h3>100+</h3>
+        <p>만족도</p>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <p><i class="fa fa-running"></i></p>
+        <h3>0</h3>
+        <p>중도 포기</p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- footer-->
+  <footer class="text-center my-5">
+    <button onclick="topFunction()" id="topBtn" title="맨 위로">Top</button>
+    <p>&copy; 2021 오조라고, lnc. ·Privacy ·Terms</p>
+  </footer>
+
+  <!-- footer 종료-->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
