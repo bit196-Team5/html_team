@@ -14,7 +14,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="juhwan/css/style.css" />
   <style>
-    #div1 {
+        #div1 {
       width: 350px;
       height: 135px;
       padding: 10px;
@@ -55,19 +55,8 @@ p {
   font-family: "Roboto Slab", serif;
 }
 
-a,
-a:link,
-a:active,
-a:visited {
-  color: #0066aa;
-  text-decoration: none;
-  border-bottom: #000013 0.16rem solid;
-}
 
-a:hover {
-  color: #000013;
-  border-bottom: #0066aa 0.16rem solid;
-}
+
 
 header,
 footer {
@@ -291,21 +280,6 @@ li {
       </div>
     </div>
   </nav>
-
-
-
-
-
-
-
-  <h3>드래그앤 드랍</h3>
-
-  <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-  <br>
-  <img id="drag1" src="juhwan//images/notebook.png" draggable="true" ondragstart="drag(event)" width="128" height="128">
-
-  <hr>
-
   <h3>칸반보드</h3>
   <div class="add-task-container">
     <input type="text" maxlength="12" id="taskText" placeholder="할 일" onkeydown="if (event.keyCode == 13)
@@ -393,7 +367,7 @@ li {
 
 
   <!-- footer-->
-  <footer class="text-center">
+  <footer class="text-center w-100">
     <button onclick="topFunction()" id="topBtn" title="맨 위로">Top</button>
     <p>&copy; 2021 오조라고, lnc. ·Privacy ·Terms</p>
   </footer>
@@ -427,27 +401,26 @@ li {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   }
-</script>
-<script>
-  dragula([
-  document.getElementById("to-do"),
-  document.getElementById("doing"),
-  document.getElementById("done"),
-  document.getElementById("trash")
-]);
-removeOnSpill: false
-  .on("drag", function(el) {
-    el.className.replace("ex-moved", "");
-  })
-  .on("drop", function(el) {
-    el.className += "ex-moved";
-  })
-  .on("over", function(el, container) {
-    container.className += "ex-over";
-  })
-  .on("out", function(el, container) {
-    container.className.replace("ex-over", "");
-  });
+/* Custom Dragula JS */
+dragula([
+document.getElementById("to-do"),
+document.getElementById("doing"),
+document.getElementById("done"),
+document.getElementById("trash")]);
+
+removeOnSpill: false.
+on("drag", function (el) {
+  el.className.replace("ex-moved", "");
+}).
+on("drop", function (el) {
+  el.className += "ex-moved";
+}).
+on("over", function (el, container) {
+  container.className += "ex-over";
+}).
+on("out", function (el, container) {
+  container.className.replace("ex-over", "");
+});
 
 /* Vanilla JS to add a new task */
 function addTask() {
@@ -455,7 +428,7 @@ function addTask() {
   var inputTask = document.getElementById("taskText").value;
   /* Add task to the 'To Do' column */
   document.getElementById("to-do").innerHTML +=
-    "<li class='task'><p>" + inputTask + "</p></li>";
+  "<li class='task'><p>" + inputTask + "</p></li>";
   /* Clear task text from input after adding task */
   document.getElementById("taskText").value = "";
 }
@@ -465,8 +438,7 @@ function emptyTrash() {
   /* Clear tasks from 'Trash' column */
   document.getElementById("trash").innerHTML = "";
 }
+//# sourceURL=pen.js
 
 
 </script>
-
-</html>
